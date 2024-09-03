@@ -1,0 +1,2409 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/21/2024 5:37:24 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-2GUC27I8"
+  DTS:CreatorName="LAPTOP-2GUC27I8\diego"
+  DTS:DTSID="{72AA5CFC-4B58-49CA-9F98-0BD930F1ACC6}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5467.0"
+  DTS:LocaleID="9226"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{58B6F5CB-FDF2-4A6D-8155-1BA574D53734}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost, 1430.MovilidadDWH.sa]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{FB36F4FC-25FB-4F66-9F9E-480FBB96929F}"
+      DTS:ObjectName="localhost, 1430.MovilidadDWH.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost, 1430;User ID=sa;Initial Catalog=MovilidadDWH;Application Name=SSIS-Terminales-{FB36F4FC-25FB-4F66-9F9E-480FBB96929F}localhost, 1430.MovilidadDWH.sa;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZGmFhT0CYkiqGmqgOFhiyAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADqiku3/eOhoGms5t/4jYbQjdZucRiA9uplB30R9CpCrwAAAAAOgAAAAAIAACAAAABShvc40Gzu0ZlguDOuBZbbxzjovdejpN4WOWTms7pumSAAAABTZkffdUu1yGXCCGdSGYi94YIGk862zPY8ntKOIXG8eEAAAABcS7h5m/R9kfrCEepoAoRDSM2KFh9f6tVckBLS81MccZt/GwX+cd4PVjrmV17hXX2zjzVj7K4OkV1Dspfbs39C</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost, 1430.MovilidadDWH.sa1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3362C0FC-6355-434C-9788-46FFA2FC21C8}"
+      DTS:ObjectName="localhost, 1430.MovilidadDWH.sa1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost, 1430;User ID=sa;Initial Catalog=MovilidadDWH;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-Package1-{3362C0FC-6355-434C-9788-46FFA2FC21C8}localhost, 1430.MovilidadDWH.sa1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZGmFhT0CYkiqGmqgOFhiyAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABbCJPSaVxXamhLQ+UBpLDYktovRZObCRXTY7jsZaIdsgAAAAAOgAAAAAIAACAAAABHKG0eOVsJ8wwySR+bh9AaF8o3UbngtIR+FCfF0TflqCAAAAAexFUGxsUecj9mVwknQWEJS99Q9lYOYKm4rHSMPFcI3EAAAAAH5GZuSE2YyOaZBYrtI9vF/RORs90hsOXFpKVLgJJc3LKmkTZGwMNrfaz6cWxcMlIFWw32UrusVzKjO045UFKc</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost, 1430.MovilidadSource.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{228FA93F-071A-4F71-B167-D7594B7B343D}"
+      DTS:ObjectName="localhost, 1430.MovilidadSource.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost, 1430;User ID=sa;Initial Catalog=MovilidadSource;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-Package1-{228FA93F-071A-4F71-B167-D7594B7B343D}localhost, 1430.MovilidadSource.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZGmFhT0CYkiqGmqgOFhiyAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAByK+bdyl2bL6nU7GmIO4qeE+UpmYyWAACLXVr8hRimngAAAAAOgAAAAAIAACAAAADLyUyUp9EiHFiah6W2FQR/uMb/BHs8X0StsjBP4snwCyAAAADutv7lkau9wU4L9Bf9jqMWHFpiqLJ+beVtqiIzxsl+UEAAAAA+a3xUFqTvSIoT3TH3YtMc7l5hpL3Xo+yBe0Fn+z4HlZ544wzm2T5M7yqeO1Ck1BrGLdcKFJfYiIj8Gpcx9ZNs</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost, 1430.MovilidadSource.sa1]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{6A0FCA2E-11EC-4162-B2CF-4C13B7E6CF63}"
+      DTS:ObjectName="localhost, 1430.MovilidadSource.sa1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost, 1430;User ID=sa;Initial Catalog=MovilidadSource;Persist Security Info=True;Application Name=SSIS-Package1-{6A0FCA2E-11EC-4162-B2CF-4C13B7E6CF63}localhost, 1430.MovilidadSource.sa1;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZGmFhT0CYkiqGmqgOFhiyAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABOzpP83oeXcSVjfjjZLMKtFGlcCtvRaNC0rO3XGQ48bAAAAAAOgAAAAAIAACAAAAAPhbnk0pQWmO9NBSNagKTi1+ErAOFgt7OUbleO1xjJ+iAAAAB2ucMWhrybN+/B3uhqCcm3v1L10gVMEqYSzClY5sAPFkAAAADmpgbkSlC0mzJa/hYDIxA/IJXAwyRF2FKL/ikoPujQo8aKStV6aUSHUta5fCo/GiUfi6duOas3XFT/phjeZtRN</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{CA37E2A9-6590-4381-93F4-817BAEF75E31}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\BusquedaClaseVehiculo"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="BusquedaClaseVehiculo"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[ClaseVehiculo]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[ClaseVehiculo]) [refTable]
+where [refTable].[NombreClaseVehiculo] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="IDClaseVehiculo" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NombreClaseVehiculo" dataType="DT_WSTR" length="9" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[CLASE_VEHICULOConversion]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\BusquedaClaseVehiculo.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost, 1430.MovilidadDWH.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost, 1430.MovilidadDWH.sa1]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\BusquedaClaseVehiculo.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\BusquedaClaseVehiculo.Inputs[Lookup Input].Columns[CLASE_VEHICULOConversion]"
+                      cachedDataType="wstr"
+                      cachedLength="9"
+                      cachedName="CLASE_VEHICULOConversion"
+                      lineageId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[CLASE_VEHICULOConversion]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">NombreClaseVehiculo</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\BusquedaClaseVehiculo.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\BusquedaClaseVehiculo.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BusquedaClaseVehiculo.Outputs[Lookup Match Output].Columns[IDClaseVehiculo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow Task\BusquedaClaseVehiculo.Outputs[Lookup Match Output].Columns[IDClaseVehiculo]"
+                      name="IDClaseVehiculo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">IDClaseVehiculo</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\BusquedaClaseVehiculo.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\BusquedaClaseVehiculo.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\BusquedaClaseVehiculo.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\BusquedaClaseVehiculo.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BusquedaClaseVehiculo.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\BusquedaClaseVehiculo.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BusquedaClaseVehiculo.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\BusquedaClaseVehiculo.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\BusquedaDepartamentoDestino"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="BusquedaDepartamentoDestino"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Municipos]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Municipos]) [refTable]
+where [refTable].[IdMunicipio] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="IdMunicipio" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NombreMunicipio" dataType="DT_STR" length="27" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="IdDepartamento" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\CoversionMunicipioEntero.Outputs[Data Conversion Output].Columns[MUNICIPIO_ORIGEN_RUTAConversionEntero]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\BusquedaDepartamentoDestino.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost, 1430.MovilidadDWH.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost, 1430.MovilidadDWH.sa1]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\BusquedaDepartamentoDestino.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\BusquedaDepartamentoDestino.Inputs[Lookup Input].Columns[MUNICIPIO_ORIGEN_RUTAConversionEntero]"
+                      cachedDataType="i4"
+                      cachedName="MUNICIPIO_ORIGEN_RUTAConversionEntero"
+                      lineageId="Package\Data Flow Task\CoversionMunicipioEntero.Outputs[Data Conversion Output].Columns[MUNICIPIO_ORIGEN_RUTAConversionEntero]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">IdMunicipio</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\BusquedaDepartamentoDestino.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\BusquedaDepartamentoDestino.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BusquedaDepartamentoDestino.Outputs[Lookup Match Output].Columns[IdDepartamento]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow Task\BusquedaDepartamentoDestino.Outputs[Lookup Match Output].Columns[IdDepartamento]"
+                      name="IdDepartamento"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">IdDepartamento</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\BusquedaDepartamentoDestino.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\BusquedaDepartamentoDestino.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\BusquedaDepartamentoDestino.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\BusquedaDepartamentoDestino.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BusquedaDepartamentoDestino.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\BusquedaDepartamentoDestino.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BusquedaDepartamentoDestino.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\BusquedaDepartamentoDestino.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\BusquedaDepartamentoOrigen"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="BusquedaDepartamentoOrigen"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Municipos]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Municipos]) [refTable]
+where [refTable].[IdMunicipio] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="IdMunicipio" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NombreMunicipio" dataType="DT_STR" length="27" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="IdDepartamento" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\CoversionMunicipioEntero.Outputs[Data Conversion Output].Columns[MUNICIPIO_ORIGEN_RUTAConversionEntero]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\BusquedaDepartamentoOrigen.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost, 1430.MovilidadDWH.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost, 1430.MovilidadDWH.sa1]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\BusquedaDepartamentoOrigen.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\BusquedaDepartamentoOrigen.Inputs[Lookup Input].Columns[MUNICIPIO_ORIGEN_RUTAConversionEntero]"
+                      cachedDataType="i4"
+                      cachedName="MUNICIPIO_ORIGEN_RUTAConversionEntero"
+                      lineageId="Package\Data Flow Task\CoversionMunicipioEntero.Outputs[Data Conversion Output].Columns[MUNICIPIO_ORIGEN_RUTAConversionEntero]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">IdMunicipio</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\BusquedaDepartamentoOrigen.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\BusquedaDepartamentoOrigen.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BusquedaDepartamentoOrigen.Outputs[Lookup Match Output].Columns[IdDepartamento]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow Task\BusquedaDepartamentoOrigen.Outputs[Lookup Match Output].Columns[IdDepartamento]"
+                      name="IdDepartamento"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">IdDepartamento</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\BusquedaDepartamentoOrigen.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\BusquedaDepartamentoOrigen.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\BusquedaDepartamentoOrigen.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\BusquedaDepartamentoOrigen.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BusquedaDepartamentoOrigen.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\BusquedaDepartamentoOrigen.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BusquedaDepartamentoOrigen.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\BusquedaDepartamentoOrigen.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\BusquedaNivelServicio"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="BusquedaNivelServicio"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[NivelServicio]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[NivelServicio]) [refTable]
+where [refTable].[NombreNivelServicio] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="IDNivelServicio" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NombreNivelServicio" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[NIVEL_SERVICIOConversion]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\BusquedaNivelServicio.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost, 1430.MovilidadDWH.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost, 1430.MovilidadDWH.sa1]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\BusquedaNivelServicio.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\BusquedaNivelServicio.Inputs[Lookup Input].Columns[NIVEL_SERVICIOConversion]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="NIVEL_SERVICIOConversion"
+                      lineageId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[NIVEL_SERVICIOConversion]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">NombreNivelServicio</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\BusquedaNivelServicio.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\BusquedaNivelServicio.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BusquedaNivelServicio.Outputs[Lookup Match Output].Columns[IDNivelServicio]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow Task\BusquedaNivelServicio.Outputs[Lookup Match Output].Columns[IDNivelServicio]"
+                      name="IDNivelServicio"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">IDNivelServicio</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\BusquedaNivelServicio.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\BusquedaNivelServicio.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\BusquedaNivelServicio.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\BusquedaNivelServicio.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BusquedaNivelServicio.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\BusquedaNivelServicio.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BusquedaNivelServicio.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\BusquedaNivelServicio.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\BusquedaTerminales"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="BusquedaTerminales"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Terminales]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Terminales]) [refTable]
+where [refTable].[NombreTerminal] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="IDTerminal" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NombreTerminal" dataType="DT_WSTR" length="23" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[TERMINALConversion]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\BusquedaTerminales.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost, 1430.MovilidadDWH.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost, 1430.MovilidadDWH.sa1]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\BusquedaTerminales.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\BusquedaTerminales.Inputs[Lookup Input].Columns[TERMINALConversion]"
+                      cachedDataType="wstr"
+                      cachedLength="23"
+                      cachedName="TERMINALConversion"
+                      lineageId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[TERMINALConversion]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">NombreTerminal</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\BusquedaTerminales.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\BusquedaTerminales.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BusquedaTerminales.Outputs[Lookup Match Output].Columns[IDTerminal]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow Task\BusquedaTerminales.Outputs[Lookup Match Output].Columns[IDTerminal]"
+                      name="IDTerminal"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">IDTerminal</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\BusquedaTerminales.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\BusquedaTerminales.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\BusquedaTerminales.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\BusquedaTerminales.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BusquedaTerminales.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\BusquedaTerminales.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BusquedaTerminales.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\BusquedaTerminales.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\BusquedaTipoDespacho"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="BusquedaTipoDespacho"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[TipoDespacho]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[TipoDespacho]) [refTable]
+where [refTable].[TipoDespacho] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="IDTipoDespacho" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TipoDespacho" dataType="DT_WSTR" length="8" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[TIPO_DESPACHOConversion]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\BusquedaTipoDespacho.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost, 1430.MovilidadDWH.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost, 1430.MovilidadDWH.sa1]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\BusquedaTipoDespacho.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\BusquedaTipoDespacho.Inputs[Lookup Input].Columns[TIPO_DESPACHOConversion]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="TIPO_DESPACHOConversion"
+                      lineageId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[TIPO_DESPACHOConversion]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">TipoDespacho</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\BusquedaTipoDespacho.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\BusquedaTipoDespacho.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BusquedaTipoDespacho.Outputs[Lookup Match Output].Columns[IDTipoDespacho]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow Task\BusquedaTipoDespacho.Outputs[Lookup Match Output].Columns[IDTipoDespacho]"
+                      name="IDTipoDespacho"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">IDTipoDespacho</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\BusquedaTipoDespacho.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\BusquedaTipoDespacho.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\BusquedaTipoDespacho.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\BusquedaTipoDespacho.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BusquedaTipoDespacho.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\BusquedaTipoDespacho.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BusquedaTipoDespacho.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\BusquedaTipoDespacho.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Conversiones"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Conversiones"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Conversiones.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Conversiones.Inputs[Data Conversion Input].Columns[TERMINAL]"
+                      cachedDataType="nText"
+                      cachedName="TERMINAL"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[TERMINAL]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Conversiones.Inputs[Data Conversion Input].Columns[CLASE_VEHICULO]"
+                      cachedDataType="nText"
+                      cachedName="CLASE_VEHICULO"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[CLASE_VEHICULO]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Conversiones.Inputs[Data Conversion Input].Columns[NIVEL_SERVICIO]"
+                      cachedDataType="nText"
+                      cachedName="NIVEL_SERVICIO"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[NIVEL_SERVICIO]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Conversiones.Inputs[Data Conversion Input].Columns[TIPO_DESPACHO]"
+                      cachedDataType="nText"
+                      cachedName="TIPO_DESPACHO"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[TIPO_DESPACHO]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Conversiones.Inputs[Data Conversion Input].Columns[MUNICIPIO_ORIGEN_RUTA]"
+                      cachedDataType="nText"
+                      cachedName="MUNICIPIO_ORIGEN_RUTA"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[MUNICIPIO_ORIGEN_RUTA]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Conversiones.Inputs[Data Conversion Input].Columns[MUNICIPIO_DESTINO_RUTA]"
+                      cachedDataType="nText"
+                      cachedName="MUNICIPIO_DESTINO_RUTA"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[MUNICIPIO_DESTINO_RUTA]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Conversiones.Inputs[Data Conversion Input].Columns[HORA_DESPACHO]"
+                      cachedDataType="nText"
+                      cachedName="HORA_DESPACHO"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[HORA_DESPACHO]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Conversiones.Inputs[Data Conversion Input].Columns[FECHA_DESPACHO]"
+                      cachedDataType="nText"
+                      cachedName="FECHA_DESPACHO"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[FECHA_DESPACHO]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task\Conversiones.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[TIPO_DESPACHOConversion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="8"
+                      lineageId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[TIPO_DESPACHOConversion]"
+                      name="TIPO_DESPACHOConversion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[TIPO_DESPACHO]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[CLASE_VEHICULOConversion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="9"
+                      lineageId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[CLASE_VEHICULOConversion]"
+                      name="CLASE_VEHICULOConversion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[CLASE_VEHICULO]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[NIVEL_SERVICIOConversion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[NIVEL_SERVICIOConversion]"
+                      name="NIVEL_SERVICIOConversion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[NIVEL_SERVICIO]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[TERMINALConversion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="23"
+                      lineageId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[TERMINALConversion]"
+                      name="TERMINALConversion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[TERMINAL]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[MUNICIPIO_ORIGEN_RUTAConversion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="5"
+                      lineageId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[MUNICIPIO_ORIGEN_RUTAConversion]"
+                      name="MUNICIPIO_ORIGEN_RUTAConversion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[MUNICIPIO_ORIGEN_RUTA]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[MUNICIPIO_DESTINO_RUTAConversion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[MUNICIPIO_DESTINO_RUTAConversion]"
+                      name="MUNICIPIO_DESTINO_RUTAConversion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[MUNICIPIO_DESTINO_RUTA]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[HORA_DESPACHOConversion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="5"
+                      lineageId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[HORA_DESPACHOConversion]"
+                      name="HORA_DESPACHOConversion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[HORA_DESPACHO]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[FECHA_DESPACHOConversion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[FECHA_DESPACHOConversion]"
+                      name="FECHA_DESPACHOConversion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[FECHA_DESPACHO]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task\Conversiones.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\CoversionMunicipioEntero"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="CoversionMunicipioEntero"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\CoversionMunicipioEntero.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\CoversionMunicipioEntero.Inputs[Data Conversion Input].Columns[MUNICIPIO_ORIGEN_RUTAConversion]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="MUNICIPIO_ORIGEN_RUTAConversion"
+                      lineageId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[MUNICIPIO_ORIGEN_RUTAConversion]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CoversionMunicipioEntero.Inputs[Data Conversion Input].Columns[MUNICIPIO_DESTINO_RUTAConversion]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="MUNICIPIO_DESTINO_RUTAConversion"
+                      lineageId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[MUNICIPIO_DESTINO_RUTAConversion]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CoversionMunicipioEntero.Inputs[Data Conversion Input].Columns[HORA_DESPACHOConversion]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="HORA_DESPACHOConversion"
+                      lineageId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[HORA_DESPACHOConversion]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CoversionMunicipioEntero.Inputs[Data Conversion Input].Columns[FECHA_DESPACHOConversion]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FECHA_DESPACHOConversion"
+                      lineageId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[FECHA_DESPACHOConversion]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\CoversionMunicipioEntero.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task\CoversionMunicipioEntero.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CoversionMunicipioEntero.Outputs[Data Conversion Output].Columns[MUNICIPIO_ORIGEN_RUTAConversionEntero]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\CoversionMunicipioEntero.Outputs[Data Conversion Output].Columns[MUNICIPIO_ORIGEN_RUTAConversionEntero]"
+                      name="MUNICIPIO_ORIGEN_RUTAConversionEntero"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[MUNICIPIO_ORIGEN_RUTAConversion]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CoversionMunicipioEntero.Outputs[Data Conversion Output].Columns[MUNICIPIO_DESTINO_RUTAConversionEntero]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\CoversionMunicipioEntero.Outputs[Data Conversion Output].Columns[MUNICIPIO_DESTINO_RUTAConversionEntero]"
+                      name="MUNICIPIO_DESTINO_RUTAConversionEntero"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[MUNICIPIO_DESTINO_RUTAConversion]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CoversionMunicipioEntero.Outputs[Data Conversion Output].Columns[HORA_DESPACHOConversionEntero]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\CoversionMunicipioEntero.Outputs[Data Conversion Output].Columns[HORA_DESPACHOConversionEntero]"
+                      name="HORA_DESPACHOConversionEntero"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[HORA_DESPACHOConversion]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CoversionMunicipioEntero.Outputs[Data Conversion Output].Columns[FECHA_DESPACHOConversionFecha]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\CoversionMunicipioEntero.Outputs[Data Conversion Output].Columns[FECHA_DESPACHOConversionFecha]"
+                      name="FECHA_DESPACHOConversionFecha"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output].Columns[FECHA_DESPACHOConversion]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\CoversionMunicipioEntero.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task\CoversionMunicipioEntero.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CoversionMunicipioEntero.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\CoversionMunicipioEntero.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CoversionMunicipioEntero.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\CoversionMunicipioEntero.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\InsertarViajesDWH"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="InsertarViajesDWH"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."ViajesTerminalesTerrestres"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\InsertarViajesDWH.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost, 1430.MovilidadDWH.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost, 1430.MovilidadDWH.sa]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].Columns[MUNICIPIO_DESTINO_RUTA]"
+                      cachedDataType="nText"
+                      cachedName="MUNICIPIO_DESTINO_RUTA"
+                      externalMetadataColumnId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdMunicipioDestino]"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[MUNICIPIO_DESTINO_RUTA]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].Columns[MUNICIPIO_ORIGEN_RUTA]"
+                      cachedDataType="nText"
+                      cachedName="MUNICIPIO_ORIGEN_RUTA"
+                      externalMetadataColumnId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdMunicipioOrigen]"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[MUNICIPIO_ORIGEN_RUTA]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].Columns[DESPACHOS]"
+                      cachedDataType="nText"
+                      cachedName="DESPACHOS"
+                      externalMetadataColumnId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[CantidadDespachos]"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[DESPACHOS]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].Columns[PASAJEROS]"
+                      cachedDataType="nText"
+                      cachedName="PASAJEROS"
+                      externalMetadataColumnId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[CantidadPasajeros]"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[PASAJEROS]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].Columns[IDTerminal]"
+                      cachedDataType="i4"
+                      cachedName="IDTerminal"
+                      externalMetadataColumnId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdTerminal]"
+                      lineageId="Package\Data Flow Task\BusquedaTerminales.Outputs[Lookup Match Output].Columns[IDTerminal]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].Columns[IDClaseVehiculo]"
+                      cachedDataType="i4"
+                      cachedName="IDClaseVehiculo"
+                      externalMetadataColumnId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdClaseVehiculo]"
+                      lineageId="Package\Data Flow Task\BusquedaClaseVehiculo.Outputs[Lookup Match Output].Columns[IDClaseVehiculo]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].Columns[IDNivelServicio]"
+                      cachedDataType="i4"
+                      cachedName="IDNivelServicio"
+                      externalMetadataColumnId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdNivelServicio]"
+                      lineageId="Package\Data Flow Task\BusquedaNivelServicio.Outputs[Lookup Match Output].Columns[IDNivelServicio]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].Columns[IDTipoDespacho]"
+                      cachedDataType="i4"
+                      cachedName="IDTipoDespacho"
+                      externalMetadataColumnId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdTipoDespacho]"
+                      lineageId="Package\Data Flow Task\BusquedaTipoDespacho.Outputs[Lookup Match Output].Columns[IDTipoDespacho]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].Columns[IdDepartamento]"
+                      cachedDataType="i4"
+                      cachedName="IdDepartamento"
+                      externalMetadataColumnId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdDepartamentoOrigen]"
+                      lineageId="Package\Data Flow Task\BusquedaDepartamentoOrigen.Outputs[Lookup Match Output].Columns[IdDepartamento]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].Columns[IdDepartamento1]"
+                      cachedDataType="i4"
+                      cachedName="IdDepartamento"
+                      externalMetadataColumnId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdDespartamentoDestino]"
+                      lineageId="Package\Data Flow Task\BusquedaDepartamentoDestino.Outputs[Lookup Match Output].Columns[IdDepartamento]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].Columns[HORA_DESPACHOConversionEntero]"
+                      cachedDataType="i4"
+                      cachedName="HORA_DESPACHOConversionEntero"
+                      externalMetadataColumnId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[HoraDespacho]"
+                      lineageId="Package\Data Flow Task\CoversionMunicipioEntero.Outputs[Data Conversion Output].Columns[HORA_DESPACHOConversionEntero]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].Columns[FECHA_DESPACHOConversionFecha]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FECHA_DESPACHOConversionFecha"
+                      externalMetadataColumnId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[FechaDespacho]"
+                      lineageId="Package\Data Flow Task\CoversionMunicipioEntero.Outputs[Data Conversion Output].Columns[FECHA_DESPACHOConversionFecha]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdViaje]"
+                      dataType="i4"
+                      name="IdViaje" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdTerminal]"
+                      dataType="i4"
+                      name="IdTerminal" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdClaseVehiculo]"
+                      dataType="i4"
+                      name="IdClaseVehiculo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdNivelServicio]"
+                      dataType="i4"
+                      name="IdNivelServicio" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdMunicipioOrigen]"
+                      dataType="i4"
+                      name="IdMunicipioOrigen" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdDepartamentoOrigen]"
+                      dataType="i4"
+                      name="IdDepartamentoOrigen" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdMunicipioDestino]"
+                      dataType="i4"
+                      name="IdMunicipioDestino" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdDespartamentoDestino]"
+                      dataType="i4"
+                      name="IdDespartamentoDestino" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[FechaDespacho]"
+                      dataType="dbTimeStamp"
+                      name="FechaDespacho" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[HoraDespacho]"
+                      dataType="i4"
+                      name="HoraDespacho" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[CantidadDespachos]"
+                      dataType="i4"
+                      name="CantidadDespachos" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[CantidadPasajeros]"
+                      dataType="i4"
+                      name="CantidadPasajeros" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdTipoDespacho]"
+                      dataType="i4"
+                      name="IdTipoDespacho" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\InsertarViajesDWH.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\InsertarViajesDWH.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\InsertarViajesDWH.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\InsertarViajesDWH.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="ViajesSourcesOperacionTerminales"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Operaci_n_de_pasajeros_y_despacho_de_veh_culos_en_la_modalidad_de_transporte_de_pasajeros_por_carretera_20240705"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost, 1430.MovilidadSource.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost, 1430.MovilidadSource.sa1]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[TERMINAL]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].ExternalColumns[TERMINAL]"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[TERMINAL]"
+                      name="TERMINAL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[CLASE_VEHICULO]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].ExternalColumns[CLASE_VEHICULO]"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[CLASE_VEHICULO]"
+                      name="CLASE_VEHICULO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[NIVEL_SERVICIO]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].ExternalColumns[NIVEL_SERVICIO]"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[NIVEL_SERVICIO]"
+                      name="NIVEL_SERVICIO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[MUNICIPIO_ORIGEN_RUTA]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].ExternalColumns[MUNICIPIO_ORIGEN_RUTA]"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[MUNICIPIO_ORIGEN_RUTA]"
+                      name="MUNICIPIO_ORIGEN_RUTA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[MUNICIPIO_DESTINO_RUTA]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].ExternalColumns[MUNICIPIO_DESTINO_RUTA]"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[MUNICIPIO_DESTINO_RUTA]"
+                      name="MUNICIPIO_DESTINO_RUTA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[FECHA_DESPACHO]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].ExternalColumns[FECHA_DESPACHO]"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[FECHA_DESPACHO]"
+                      name="FECHA_DESPACHO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[HORA_DESPACHO]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].ExternalColumns[HORA_DESPACHO]"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[HORA_DESPACHO]"
+                      name="HORA_DESPACHO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[TIPO_DESPACHO]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].ExternalColumns[TIPO_DESPACHO]"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[TIPO_DESPACHO]"
+                      name="TIPO_DESPACHO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[DESPACHOS]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].ExternalColumns[DESPACHOS]"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[DESPACHOS]"
+                      name="DESPACHOS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[PASAJEROS]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].ExternalColumns[PASAJEROS]"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].Columns[PASAJEROS]"
+                      name="PASAJEROS"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].ExternalColumns[TERMINAL]"
+                      dataType="nText"
+                      name="TERMINAL" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].ExternalColumns[CLASE_VEHICULO]"
+                      dataType="nText"
+                      name="CLASE_VEHICULO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].ExternalColumns[NIVEL_SERVICIO]"
+                      dataType="nText"
+                      name="NIVEL_SERVICIO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].ExternalColumns[MUNICIPIO_ORIGEN_RUTA]"
+                      dataType="nText"
+                      name="MUNICIPIO_ORIGEN_RUTA" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].ExternalColumns[MUNICIPIO_DESTINO_RUTA]"
+                      dataType="nText"
+                      name="MUNICIPIO_DESTINO_RUTA" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].ExternalColumns[FECHA_DESPACHO]"
+                      dataType="nText"
+                      name="FECHA_DESPACHO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].ExternalColumns[HORA_DESPACHO]"
+                      dataType="nText"
+                      name="HORA_DESPACHO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].ExternalColumns[TIPO_DESPACHO]"
+                      dataType="nText"
+                      name="TIPO_DESPACHO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].ExternalColumns[DESPACHOS]"
+                      dataType="nText"
+                      name="DESPACHOS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET].ExternalColumns[PASAJEROS]"
+                      dataType="nText"
+                      name="PASAJEROS" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de error de origen de ADO NET].Columns[TERMINAL]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de error de origen de ADO NET].Columns[TERMINAL]"
+                      name="TERMINAL" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de error de origen de ADO NET].Columns[CLASE_VEHICULO]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de error de origen de ADO NET].Columns[CLASE_VEHICULO]"
+                      name="CLASE_VEHICULO" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de error de origen de ADO NET].Columns[NIVEL_SERVICIO]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de error de origen de ADO NET].Columns[NIVEL_SERVICIO]"
+                      name="NIVEL_SERVICIO" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de error de origen de ADO NET].Columns[MUNICIPIO_ORIGEN_RUTA]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de error de origen de ADO NET].Columns[MUNICIPIO_ORIGEN_RUTA]"
+                      name="MUNICIPIO_ORIGEN_RUTA" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de error de origen de ADO NET].Columns[MUNICIPIO_DESTINO_RUTA]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de error de origen de ADO NET].Columns[MUNICIPIO_DESTINO_RUTA]"
+                      name="MUNICIPIO_DESTINO_RUTA" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de error de origen de ADO NET].Columns[FECHA_DESPACHO]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de error de origen de ADO NET].Columns[FECHA_DESPACHO]"
+                      name="FECHA_DESPACHO" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de error de origen de ADO NET].Columns[HORA_DESPACHO]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de error de origen de ADO NET].Columns[HORA_DESPACHO]"
+                      name="HORA_DESPACHO" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de error de origen de ADO NET].Columns[TIPO_DESPACHO]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de error de origen de ADO NET].Columns[TIPO_DESPACHO]"
+                      name="TIPO_DESPACHO" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de error de origen de ADO NET].Columns[DESPACHOS]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de error de origen de ADO NET].Columns[DESPACHOS]"
+                      name="DESPACHOS" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de error de origen de ADO NET].Columns[PASAJEROS]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de error de origen de ADO NET].Columns[PASAJEROS]"
+                      name="PASAJEROS" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Task\CoversionMunicipioEntero.Inputs[Data Conversion Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task\Conversiones.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Data Conversion Output1]"
+              endId="Package\Data Flow Task\BusquedaNivelServicio.Inputs[Lookup Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task\CoversionMunicipioEntero.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Lookup Match Output]"
+              endId="Package\Data Flow Task\BusquedaTipoDespacho.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow Task\BusquedaNivelServicio.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Lookup Match Output1]"
+              endId="Package\Data Flow Task\BusquedaTerminales.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow Task\BusquedaTipoDespacho.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Lookup Match Output2]"
+              endId="Package\Data Flow Task\BusquedaClaseVehiculo.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow Task\BusquedaTerminales.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Lookup Match Output3]"
+              endId="Package\Data Flow Task\InsertarViajesDWH.Inputs[Entrada de destino de ADO NET]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow Task\BusquedaDepartamentoOrigen.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Lookup Match Output4]"
+              endId="Package\Data Flow Task\BusquedaDepartamentoDestino.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow Task\BusquedaClaseVehiculo.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Lookup Match Output5]"
+              endId="Package\Data Flow Task\BusquedaDepartamentoOrigen.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow Task\BusquedaDepartamentoDestino.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Salida de origen de ADO NET]"
+              endId="Package\Data Flow Task\Conversiones.Inputs[Data Conversion Input]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Data Flow Task\ViajesSourcesOperacionTerminales.Outputs[Salida de origen de ADO NET]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="142.4,41.6"
+          Id="Package\Data Flow Task\Conversiones"
+          TopLeft="357.954544361794,40.9090909090909" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Data Flow Task\InsertarViajesDWH"
+          TopLeft="635.742410897607,314.512121790683" />
+        <NodeLayout
+          Size="200,41.6"
+          Id="Package\Data Flow Task\CoversionMunicipioEntero"
+          TopLeft="585.833310054409,39.8666669834985" />
+        <NodeLayout
+          Size="244.8,41.6"
+          Id="Package\Data Flow Task\ViajesSourcesOperacionTerminales"
+          TopLeft="56.1363625436119,38.1969696969697" />
+        <NodeLayout
+          Size="226.4,41.6"
+          Id="Package\Data Flow Task\BusquedaDepartamentoDestino"
+          TopLeft="344.166652990713,204.733334566222" />
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\Data Flow Task\BusquedaNivelServicio"
+          TopLeft="598.83332127995,110.376037711713" />
+        <NodeLayout
+          Size="192,41.6"
+          Id="Package\Data Flow Task\BusquedaTipoDespacho"
+          TopLeft="357.166653884783,108.766666411823" />
+        <NodeLayout
+          Size="192,41.6"
+          Id="Package\Data Flow Task\BusquedaClaseVehiculo"
+          TopLeft="45.0000193383953,205.2000005579" />
+        <NodeLayout
+          Size="222.4,41.6"
+          Id="Package\Data Flow Task\BusquedaDepartamentoOrigen"
+          TopLeft="613.333310319319,202.86666636361" />
+        <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\Data Flow Task\BusquedaTerminales"
+          TopLeft="51.6606257632522,115.569697541372" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Salida de origen de ADO NET]"
+          TopLeft="300.936362543612,60.3530303030303">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="57.0181818181823,0"
+              Start="0,0"
+              End="49.5181818181823,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="49.5181818181823,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output5]"
+          TopLeft="570.566652990713,224.600000464916">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="42.7666573286061,0"
+              Start="0,0"
+              End="35.2666573286061,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="35.2666573286061,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-30.558058054447,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output4]"
+          TopLeft="237.000019338395,225.766667562061">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="107.166633652317,0"
+              Start="0,0"
+              End="99.6666336523173,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="99.6666336523173,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="1.64193010740865,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output3]"
+          TopLeft="721.937860608463,244.46666636361">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,70.0454554270733"
+              Start="0,0"
+              End="0,62.5454554270733">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.5454554270733" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,25.4680402135367,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output2]"
+          TopLeft="140.530322550824,157.169697541372">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.0303030165277"
+              Start="0,0"
+              End="0,40.5303030165277">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5303030165277" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,14.4604640082638,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output1]"
+          TopLeft="357.166653884783,132.968181976598">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-128.70602812153,0"
+              Start="0,0"
+              End="-121.20602812153,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-121.20602812153,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-108.794400779515,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output]"
+          TopLeft="598.83332127995,130.371352061768">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-49.6666673951678,0"
+              Start="0,0"
+              End="-42.1666673951678,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-42.1666673951678,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-69.2747204163339,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Data Conversion Output1]"
+          TopLeft="688.73331566718,81.4666669834985">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.9093707282142"
+              Start="0,0"
+              End="0,21.4093707282142">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.4093707282142" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Data Conversion Output]"
+          TopLeft="500.354544361794,61.1878789462947">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85.4787656926148,0"
+              Start="0,0"
+              End="77.9787656926148,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="77.9787656926148,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\InsertarViajesDWH">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\ViajesSourcesOperacionTerminales">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\BusquedaDepartamentoDestino">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Municipos]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\BusquedaNivelServicio">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[NivelServicio]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\BusquedaTipoDespacho">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[TipoDespacho]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\BusquedaClaseVehiculo">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[ClaseVehiculo]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\BusquedaDepartamentoOrigen">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Municipos]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\BusquedaTerminales">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Terminales]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,363 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/20/2024 11:00:31 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-2GUC27I8"
+  DTS:CreatorName="LAPTOP-2GUC27I8\diego"
+  DTS:DTSID="{161F8713-A066-4D92-A043-92587A0A14C8}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5467.0"
+  DTS:LocaleID="9226"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{D5E61DE2-8A72-4D60-BEBD-6679BC38886C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost, 1430.MovilidadDWH.sa]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{FB36F4FC-25FB-4F66-9F9E-480FBB96929F}"
+      DTS:ObjectName="localhost, 1430.MovilidadDWH.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost, 1430;User ID=sa;Initial Catalog=MovilidadDWH;Application Name=SSIS-Terminales-{FB36F4FC-25FB-4F66-9F9E-480FBB96929F}localhost, 1430.MovilidadDWH.sa;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZGmFhT0CYkiqGmqgOFhiyAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACfWC4fe6j54CaSbZeekTfHTcx/37nfbc8B7gk9sFPk3QAAAAAOgAAAAAIAACAAAAC/y5Y4dX3VHOGtoAalStNo50zx9UfxNerogbPT0yz8qSAAAADqtfKFAIQ+so6X1J7Ch4q3x+Z/IAo/FoWs1/m4cE30BUAAAACrvSOM+YSHlasL4YWHUT06Z5V2mWKU8mxFXKd1pUzAn947z+F+vgpJQqmKqdOzSnN83R6Poeb9isFvRfyG9PpO</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost, 1430.MovilidadSource.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{228FA93F-071A-4F71-B167-D7594B7B343D}"
+      DTS:ObjectName="localhost, 1430.MovilidadSource.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost, 1430;User ID=sa;Initial Catalog=MovilidadSource;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-Package1-{228FA93F-071A-4F71-B167-D7594B7B343D}localhost, 1430.MovilidadSource.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZGmFhT0CYkiqGmqgOFhiyAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC4DgBGshOa9mf6aCm28gBhOT5wsApByfwz7c3HZz/W5AAAAAAOgAAAAAIAACAAAADJgGz1Po2C0OJg9lVMd4Cltd4e6PcIc9KyahRm2V4BPyAAAADcw5RnwzW+6GMWC58K/nl9azk1uiekj8DcgZZilP/wHkAAAADzNq/E++TFbDEl56HbVja1fg2Kft9n1YT0lTA4jCjunXzDyioJDPgoFbYuV8P+cp82tOIbJFwfRPKPf8xy2NUY</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost, 1430.MovilidadSource.sa1]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{6A0FCA2E-11EC-4162-B2CF-4C13B7E6CF63}"
+      DTS:ObjectName="localhost, 1430.MovilidadSource.sa1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost, 1430;User ID=sa;Initial Catalog=MovilidadSource;Persist Security Info=True;Application Name=SSIS-Package1-{6A0FCA2E-11EC-4162-B2CF-4C13B7E6CF63}localhost, 1430.MovilidadSource.sa1;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZGmFhT0CYkiqGmqgOFhiyAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB/JEO3tbvI3mA4u0O4zg/l4JpKI5Nv02kg4ZLm9ycw5gAAAAAOgAAAAAIAACAAAADryj2r4R7xxCf420h6INpjJXZvNsXdpxvPnJxgJOUpziAAAADn4r7dqxepOuS//hZPbo7fAyYuctYe0jSlFzaQYrlONUAAAADFyiPkGAT812d2dxrCYF7xwrwPmDGtGvusb2G8JRZvN5huBEyZ1sIlABODfOjWsK3GI0PVAv2e2zl+dYLVTSvO</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ConsultarTerminalesInsertarTerminalesDWH"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{55671c59-730e-4d5c-ac42-99868dd031c2}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ConsultarTerminalesInsertarTerminalesDWH">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\ConsultarTerminalesInsertarTerminalesDWH\TerminalesDWH"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="TerminalesDWH"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."TipoDespacho"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ConsultarTerminalesInsertarTerminalesDWH\TerminalesDWH.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost, 1430.MovilidadDWH.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost, 1430.MovilidadDWH.sa]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ConsultarTerminalesInsertarTerminalesDWH\TerminalesDWH.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ConsultarTerminalesInsertarTerminalesDWH\TerminalesDWH.Inputs[Entrada de destino de ADO NET].Columns[TIPO_DESPACHO]"
+                      cachedDataType="nText"
+                      cachedName="TIPO_DESPACHO"
+                      externalMetadataColumnId="Package\ConsultarTerminalesInsertarTerminalesDWH\TerminalesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[TipoDespacho]"
+                      lineageId="Package\ConsultarTerminalesInsertarTerminalesDWH\ViajesSource.Outputs[Salida de origen de ADO NET].Columns[TIPO_DESPACHO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ConsultarTerminalesInsertarTerminalesDWH\TerminalesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[IDTipoDespacho]"
+                      dataType="i4"
+                      name="IDTipoDespacho" />
+                    <externalMetadataColumn
+                      refId="Package\ConsultarTerminalesInsertarTerminalesDWH\TerminalesDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[TipoDespacho]"
+                      dataType="wstr"
+                      length="8"
+                      name="TipoDespacho" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ConsultarTerminalesInsertarTerminalesDWH\TerminalesDWH.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\ConsultarTerminalesInsertarTerminalesDWH\TerminalesDWH.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ConsultarTerminalesInsertarTerminalesDWH\TerminalesDWH.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ConsultarTerminalesInsertarTerminalesDWH\TerminalesDWH.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ConsultarTerminalesInsertarTerminalesDWH\TerminalesDWH.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ConsultarTerminalesInsertarTerminalesDWH\TerminalesDWH.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ConsultarTerminalesInsertarTerminalesDWH\ViajesSource"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="ViajesSource"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT TIPO_DESPACHO
+from MovilidadSource.dbo.Operaci_n_de_pasajeros_y_despacho_de_veh_culos_en_la_modalidad_de_transporte_de_pasajeros_por_carretera_20240705
+EXCEPT 
+SELECT TipoDespacho
+FROM MovilidadDWH.dbo.TipoDespacho</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Operaci_n_de_pasajeros_y_despacho_de_veh_culos_en_la_modalidad_de_transporte_de_pasajeros_por_carretera_20240705"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ConsultarTerminalesInsertarTerminalesDWH\ViajesSource.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost, 1430.MovilidadSource.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost, 1430.MovilidadSource.sa1]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ConsultarTerminalesInsertarTerminalesDWH\ViajesSource.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ConsultarTerminalesInsertarTerminalesDWH\ViajesSource.Outputs[Salida de origen de ADO NET].Columns[TIPO_DESPACHO]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ConsultarTerminalesInsertarTerminalesDWH\ViajesSource.Outputs[Salida de origen de ADO NET].ExternalColumns[TIPO_DESPACHO]"
+                      lineageId="Package\ConsultarTerminalesInsertarTerminalesDWH\ViajesSource.Outputs[Salida de origen de ADO NET].Columns[TIPO_DESPACHO]"
+                      name="TIPO_DESPACHO"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ConsultarTerminalesInsertarTerminalesDWH\ViajesSource.Outputs[Salida de origen de ADO NET].ExternalColumns[TIPO_DESPACHO]"
+                      dataType="nText"
+                      name="TIPO_DESPACHO" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ConsultarTerminalesInsertarTerminalesDWH\ViajesSource.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ConsultarTerminalesInsertarTerminalesDWH\ViajesSource.Outputs[Salida de error de origen de ADO NET].Columns[TIPO_DESPACHO]"
+                      dataType="nText"
+                      lineageId="Package\ConsultarTerminalesInsertarTerminalesDWH\ViajesSource.Outputs[Salida de error de origen de ADO NET].Columns[TIPO_DESPACHO]"
+                      name="TIPO_DESPACHO" />
+                    <outputColumn
+                      refId="Package\ConsultarTerminalesInsertarTerminalesDWH\ViajesSource.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ConsultarTerminalesInsertarTerminalesDWH\ViajesSource.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ConsultarTerminalesInsertarTerminalesDWH\ViajesSource.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ConsultarTerminalesInsertarTerminalesDWH\ViajesSource.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\ConsultarTerminalesInsertarTerminalesDWH.Paths[Salida de origen de ADO NET]"
+              endId="Package\ConsultarTerminalesInsertarTerminalesDWH\TerminalesDWH.Inputs[Entrada de destino de ADO NET]"
+              name="Salida de origen de ADO NET"
+              startId="Package\ConsultarTerminalesInsertarTerminalesDWH\ViajesSource.Outputs[Salida de origen de ADO NET]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="286.4,41.6"
+          Id="Package\ConsultarTerminalesInsertarTerminalesDWH"
+          TopLeft="69.166666302416,179.211111776387" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\ConsultarTerminalesInsertarTerminalesDWH">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\ConsultarTerminalesInsertarTerminalesDWH\ViajesSource"
+          TopLeft="382,19" />
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\ConsultarTerminalesInsertarTerminalesDWH\TerminalesDWH"
+          TopLeft="375,144" />
+        <EdgeLayout
+          Id="Package\ConsultarTerminalesInsertarTerminalesDWH.Paths[Salida de origen de ADO NET]"
+          TopLeft="452.1,60.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,83.4"
+              Start="0,0"
+              End="0,75.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,75.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ConsultarTerminalesInsertarTerminalesDWH\TerminalesDWH">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ConsultarTerminalesInsertarTerminalesDWH\ViajesSource">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

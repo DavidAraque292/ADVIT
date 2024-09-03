@@ -1,0 +1,413 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/19/2024 2:25:54 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-RLMS8C3"
+  DTS:CreatorName="DESKTOP-RLMS8C3\57318"
+  DTS:DTSID="{F940E1F1-055C-43D7-ACF1-97E8BA851792}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5467.0"
+  DTS:LocaleID="9226"
+  DTS:ObjectName="Municipios"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{0F8F1529-599D-493A-A2A0-903F883B41E2}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.MovilidadDWH.sa]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{1DC49FC6-640F-408B-B578-4D5FC32EE4CF}"
+      DTS:ObjectName="localhost.MovilidadDWH.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;User ID=sa;Initial Catalog=MovilidadDWH;Persist Security Info=True;Application Name=SSIS-Package1-{1DC49FC6-640F-408B-B578-4D5FC32EE4CF}localhost.MovilidadDWH.sa;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAARFXjFJ+RW0uMA3dJ1dZWFAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADIyZFvX7Yclnp0Q5pWp0wLFmmXM5FVspKVEf5QvKYPOwAAAAAOgAAAAAIAACAAAACwTPXS+XAwUkPRRTURFwYbrMm6hkmg12jo5sQGEbnhrCAAAADxWywTwrareXN3QDiQvJ5hxBYzertBKPvYKH7dDLWawEAAAAB/zi8bZdQpZE7MnMhKSWTaxER0pd5do36RiiV4FR5phkbIfSialrSr71awCbGrLQehR3ONMzI8c2MAhG/a0kGX</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.MovilidadDWH.sa1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1D2019F5-73A8-4F6E-8D1E-E9E4F71A863A}"
+      DTS:ObjectName="localhost.MovilidadDWH.sa1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;User ID=sa;Initial Catalog=MovilidadDWH;Provider=SQLOLEDB.1;Application Name=SSIS-Package1-{1D2019F5-73A8-4F6E-8D1E-E9E4F71A863A}localhost.MovilidadDWH.sa1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAARFXjFJ+RW0uMA3dJ1dZWFAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADfl/RHSfmVwrkDvLlNsOD0JEfwAKZ2kVbBouy/CyUEbQAAAAAOgAAAAAIAACAAAAA9JmGqYVfPFo8Rz39K8+vxj5b6HMHr5IHSpmdcZPqFmSAAAAAOQMOHfqnD/zs9+nL2A8rdBdZeRHbETEhEmktQmnJYTEAAAAD2ydXJAFleV5nPMdl3Aq5dL7m6Og80wkBS1ZMULQynN/cJTQW2RVSZXrSxcMv5RltldEjfx6na0CK+H69tZ/UT</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.MovilidadSources.sa]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{FDF5662A-B498-41F8-8F5C-CF8BE6D6ECCA}"
+      DTS:ObjectName="localhost.MovilidadSources.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;User ID=sa;Initial Catalog=MovilidadSources;Persist Security Info=True;Application Name=SSIS-Package1-{FDF5662A-B498-41F8-8F5C-CF8BE6D6ECCA}localhost.MovilidadSources.sa;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAARFXjFJ+RW0uMA3dJ1dZWFAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACnemA+tWLDgycn3agMZR+o+z21C/GKBnTM/Tl0HT1slgAAAAAOgAAAAAIAACAAAABLyKpVTCqq7Kt6UUu1XjkUK8sLULb5MnVe4Wnk+65xcyAAAAAbQXBwNcxBFZlMToX7b0mPHcBV5QMC66plqTTjdnCuNUAAAADc52zOH1Jt3wakqJudlw/18LLa/Hu8omdGEH9RBbZTJChYjnHJDU0L8TAt0jusdAeMzcaHc9ksswN7TKymLuCf</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.MovilidadSources.sa1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9E8BE37E-D45A-4762-86D9-3847C14CDC9D}"
+      DTS:ObjectName="localhost.MovilidadSources.sa1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;User ID=sa;Initial Catalog=MovilidadSources;Provider=SQLOLEDB.1;Application Name=SSIS-Package1-{9E8BE37E-D45A-4762-86D9-3847C14CDC9D}localhost.MovilidadSources.sa1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAARFXjFJ+RW0uMA3dJ1dZWFAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAwtl/3qXmpDlvWOChFF/hBWyaLthEurLipek47B+gUBwAAAAAOgAAAAAIAACAAAACZx5DhwFw60Rl5DwUfWMCOJIsEFbqAmZ4DvQPN1FByUSAAAADstCwX45rULP/QdOQW+K7A/KJ8Zob+jVUbJK/D1/KneUAAAAAyGXbujT0kcEMWmJhs06FG7qM3IjZaHPdPYzwpWXftbQdjzlqnMfDl7vYNCbrkccRN8vVqvrbtlBYWZGfmEugP</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3CA9781C-C68B-465B-8717-87A8A2A8CF3E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Municipiosorigen"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="Municipiosorigen"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT Código_Municipio, Nombre_Municipio
+FROM DIVIPOLA</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Municipiosorigen.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.MovilidadSources.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.MovilidadSources.sa]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Municipiosorigen.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Municipiosorigen.Outputs[Salida de origen de ADO NET].Columns[Código_Municipio]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Municipiosorigen.Outputs[Salida de origen de ADO NET].ExternalColumns[Código_Municipio]"
+                      lineageId="Package\Data Flow Task\Municipiosorigen.Outputs[Salida de origen de ADO NET].Columns[Código_Municipio]"
+                      name="Código_Municipio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Municipiosorigen.Outputs[Salida de origen de ADO NET].Columns[Nombre_Municipio]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Municipiosorigen.Outputs[Salida de origen de ADO NET].ExternalColumns[Nombre_Municipio]"
+                      lineageId="Package\Data Flow Task\Municipiosorigen.Outputs[Salida de origen de ADO NET].Columns[Nombre_Municipio]"
+                      name="Nombre_Municipio"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Municipiosorigen.Outputs[Salida de origen de ADO NET].ExternalColumns[Código_Municipio]"
+                      dataType="nText"
+                      name="Código_Municipio" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Municipiosorigen.Outputs[Salida de origen de ADO NET].ExternalColumns[Nombre_Municipio]"
+                      dataType="nText"
+                      name="Nombre_Municipio" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Municipiosorigen.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Municipiosorigen.Outputs[Salida de error de origen de ADO NET].Columns[Código_Municipio]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\Municipiosorigen.Outputs[Salida de error de origen de ADO NET].Columns[Código_Municipio]"
+                      name="Código_Municipio" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Municipiosorigen.Outputs[Salida de error de origen de ADO NET].Columns[Nombre_Municipio]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\Municipiosorigen.Outputs[Salida de error de origen de ADO NET].Columns[Nombre_Municipio]"
+                      name="Nombre_Municipio" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Municipiosorigen.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Municipiosorigen.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Municipiosorigen.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Municipiosorigen.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Tabla_municipiosorigen"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Tabla_municipiosorigen"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Municipio_origen"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Tabla_municipiosorigen.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.MovilidadDWH.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.MovilidadDWH.sa]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Tabla_municipiosorigen.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Tabla_municipiosorigen.Inputs[Entrada de destino de ADO NET].Columns[Nombre_Municipio]"
+                      cachedDataType="nText"
+                      cachedName="Nombre_Municipio"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabla_municipiosorigen.Inputs[Entrada de destino de ADO NET].ExternalColumns[Nombre_municipio]"
+                      lineageId="Package\Data Flow Task\Municipiosorigen.Outputs[Salida de origen de ADO NET].Columns[Nombre_Municipio]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Tabla_municipiosorigen.Inputs[Entrada de destino de ADO NET].Columns[Código_Municipio]"
+                      cachedDataType="nText"
+                      cachedName="Código_Municipio"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabla_municipiosorigen.Inputs[Entrada de destino de ADO NET].ExternalColumns[IDMunicipio]"
+                      lineageId="Package\Data Flow Task\Municipiosorigen.Outputs[Salida de origen de ADO NET].Columns[Código_Municipio]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabla_municipiosorigen.Inputs[Entrada de destino de ADO NET].ExternalColumns[IDMunicipio]"
+                      dataType="i4"
+                      name="IDMunicipio" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabla_municipiosorigen.Inputs[Entrada de destino de ADO NET].ExternalColumns[Nombre_municipio]"
+                      dataType="wstr"
+                      length="27"
+                      name="Nombre_municipio" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Tabla_municipiosorigen.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Data Flow Task\Tabla_municipiosorigen.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabla_municipiosorigen.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Tabla_municipiosorigen.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabla_municipiosorigen.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Tabla_municipiosorigen.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Salida de origen de ADO NET]"
+              endId="Package\Data Flow Task\Tabla_municipiosorigen.Inputs[Entrada de destino de ADO NET]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Data Flow Task\Municipiosorigen.Outputs[Salida de origen de ADO NET]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="212.999991754691,161.500001239777" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\Data Flow Task\Municipiosorigen"
+          TopLeft="258.33332306809,70.2000005578995" />
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\Data Flow Task\Tabla_municipiosorigen"
+          TopLeft="268.333322670725,191.533334855504" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Salida de origen de ADO NET]"
+          TopLeft="336.73332306809,111.800000557899">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="25.9999996026355,79.7333342976041"
+              Start="0,0"
+              End="25.9999996026355,72.2333342976041">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.866667148802" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.866667148802"
+                    Point2="0,39.866667148802"
+                    Point3="4,39.866667148802" />
+                  <mssgle:LineSegment
+                    End="21.9999996026355,39.866667148802" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21.9999996026355,39.866667148802"
+                    Point2="25.9999996026355,39.866667148802"
+                    Point3="25.9999996026355,43.866667148802" />
+                  <mssgle:LineSegment
+                    End="25.9999996026355,72.2333342976041" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Municipiosorigen">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Tabla_municipiosorigen">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

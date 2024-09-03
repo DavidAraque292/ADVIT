@@ -1,0 +1,2 @@
+SELECT DISTINCT Nombre_Departamento
+FROM DIVIPOLAA

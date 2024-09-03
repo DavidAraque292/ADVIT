@@ -1,0 +1,370 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/20/2024 10:14:54 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-2GUC27I8"
+  DTS:CreatorName="LAPTOP-2GUC27I8\diego"
+  DTS:DTSID="{299176E7-CC78-42BF-B47B-B8E06290DB55}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5467.0"
+  DTS:LocaleID="9226"
+  DTS:ObjectName="NivelServicio"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{5F6A7A14-016D-4F9F-8A10-BB7C5F377730}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost, 1430.MovilidadDWH.sa]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{FB36F4FC-25FB-4F66-9F9E-480FBB96929F}"
+      DTS:ObjectName="localhost, 1430.MovilidadDWH.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost, 1430;User ID=sa;Initial Catalog=MovilidadDWH;Application Name=SSIS-Terminales-{FB36F4FC-25FB-4F66-9F9E-480FBB96929F}localhost, 1430.MovilidadDWH.sa;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZGmFhT0CYkiqGmqgOFhiyAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAMyRvJ28ZnhJ2FW9EXNGqEqChrF+TXalmA1jeZ1E7PdgAAAAAOgAAAAAIAACAAAAAn1yKKzCYorL8Z+Ga/VrPJvHI5jbFgfwBwt6m6HaparyAAAADO3Wy6a0K+3JVzM5wX0i1XaA8NYIStqkRy4p0ZvQRKFkAAAAC+vvYR2Kn1j0PKmcWS6g3yD49kuwTRuXUDSnjlW9coynC3ns29l4uD5pVedRFr4FW3OfibRRMy3Nb/l5zFKp1u</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost, 1430.MovilidadSource.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{228FA93F-071A-4F71-B167-D7594B7B343D}"
+      DTS:ObjectName="localhost, 1430.MovilidadSource.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost, 1430;User ID=sa;Initial Catalog=MovilidadSource;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-Package1-{228FA93F-071A-4F71-B167-D7594B7B343D}localhost, 1430.MovilidadSource.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZGmFhT0CYkiqGmqgOFhiyAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACGRteyP7ZX0Xy4/dyUX3UHz0k/bkVddHFaUccG0INDuAAAAAAOgAAAAAIAACAAAADjDbkt8Q92S0a2+eHpRP+jDFkTRBzB4NhzPCP0ArESeCAAAACLLDIWe2ZIQaNyMgWrfynuEH9CqNRUK1cijXciBNM8E0AAAAC+Tddj2/Jp3SbBmLzowanmE2JPo5Ypa2ozoHk27cDRjRNligdqrO7aTA6brON6EKNMe4gzs6egM2Wopmo+LQHV</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost, 1430.MovilidadSource.sa1]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{6A0FCA2E-11EC-4162-B2CF-4C13B7E6CF63}"
+      DTS:ObjectName="localhost, 1430.MovilidadSource.sa1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost, 1430;User ID=sa;Initial Catalog=MovilidadSource;Persist Security Info=True;Application Name=SSIS-Package1-{6A0FCA2E-11EC-4162-B2CF-4C13B7E6CF63}localhost, 1430.MovilidadSource.sa1;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZGmFhT0CYkiqGmqgOFhiyAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABcb/TGnQXWPP0a3l5ZwfLHJWMAq5D8Q7lglQWCWRGgugAAAAAOgAAAAAIAACAAAAAIyG8Xuo5NLTIocRtJhNhp+baDIF1oQlDeoaud/gdKqSAAAACbhIkDpYA+JSPHdI9VMc1IrHgbhYhPZXkgGNI3i90NnUAAAAAdDiCow8c3uOkxolTDSK0nW1Iki3YjG2RO9xuHUnpccYbfCdlwIm98DKI4B6YYnNR37KH9Mv/3iL8xtXxSxCjc</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ConsultarNivelServicioInsertarNivelServicioDWH"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{fb62e596-2f8f-4c26-9cf5-09e7f9df7345}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ConsultarNivelServicioInsertarNivelServicioDWH">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\NivelServicioDWH"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="NivelServicioDWH"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."NivelServicio"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\NivelServicioDWH.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost, 1430.MovilidadDWH.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost, 1430.MovilidadDWH.sa]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\NivelServicioDWH.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\NivelServicioDWH.Inputs[Entrada de destino de ADO NET].Columns[NIVEL_SERVICIO]"
+                      cachedDataType="nText"
+                      cachedName="NIVEL_SERVICIO"
+                      externalMetadataColumnId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\NivelServicioDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[NombreNivelServicio]"
+                      lineageId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\ViajesSource.Outputs[Salida de origen de ADO NET].Columns[NIVEL_SERVICIO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\NivelServicioDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[IDNivelServicio]"
+                      dataType="i4"
+                      name="IDNivelServicio" />
+                    <externalMetadataColumn
+                      refId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\NivelServicioDWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[NombreNivelServicio]"
+                      dataType="wstr"
+                      length="20"
+                      name="NombreNivelServicio" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\NivelServicioDWH.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\NivelServicioDWH.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\NivelServicioDWH.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\NivelServicioDWH.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\NivelServicioDWH.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\NivelServicioDWH.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\ViajesSource"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="ViajesSource"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT NIVEL_SERVICIO
+from MovilidadSource.dbo.Operaci_n_de_pasajeros_y_despacho_de_veh_culos_en_la_modalidad_de_transporte_de_pasajeros_por_carretera_20240705
+EXCEPT 
+SELECT NombreNivelServicio
+FROM MovilidadDWH.dbo.NivelServicio</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Operaci_n_de_pasajeros_y_despacho_de_veh_culos_en_la_modalidad_de_transporte_de_pasajeros_por_carretera_20240705"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\ViajesSource.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost, 1430.MovilidadSource.sa1]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost, 1430.MovilidadSource.sa1]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\ViajesSource.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\ViajesSource.Outputs[Salida de origen de ADO NET].Columns[NIVEL_SERVICIO]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\ViajesSource.Outputs[Salida de origen de ADO NET].ExternalColumns[NIVEL_SERVICIO]"
+                      lineageId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\ViajesSource.Outputs[Salida de origen de ADO NET].Columns[NIVEL_SERVICIO]"
+                      name="NIVEL_SERVICIO"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\ViajesSource.Outputs[Salida de origen de ADO NET].ExternalColumns[NIVEL_SERVICIO]"
+                      dataType="nText"
+                      name="NIVEL_SERVICIO" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\ViajesSource.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\ViajesSource.Outputs[Salida de error de origen de ADO NET].Columns[NIVEL_SERVICIO]"
+                      dataType="nText"
+                      lineageId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\ViajesSource.Outputs[Salida de error de origen de ADO NET].Columns[NIVEL_SERVICIO]"
+                      name="NIVEL_SERVICIO" />
+                    <outputColumn
+                      refId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\ViajesSource.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\ViajesSource.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\ViajesSource.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\ViajesSource.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\ConsultarNivelServicioInsertarNivelServicioDWH.Paths[Salida de origen de ADO NET]"
+              endId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\NivelServicioDWH.Inputs[Entrada de destino de ADO NET]"
+              name="Salida de origen de ADO NET"
+              startId="Package\ConsultarNivelServicioInsertarNivelServicioDWH\ViajesSource.Outputs[Salida de origen de ADO NET]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="304,41.6"
+          Id="Package\ConsultarNivelServicioInsertarNivelServicioDWH"
+          TopLeft="137.499996920427,179.611111779566" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\ConsultarNivelServicioInsertarNivelServicioDWH">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\ConsultarNivelServicioInsertarNivelServicioDWH\ViajesSource"
+          TopLeft="382,19" />
+        <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\ConsultarNivelServicioInsertarNivelServicioDWH\NivelServicioDWH"
+          TopLeft="375,144" />
+        <EdgeLayout
+          Id="Package\ConsultarNivelServicioInsertarNivelServicioDWH.Paths[Salida de origen de ADO NET]"
+          TopLeft="454.3,60.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,83.4"
+              Start="0,0"
+              End="0,75.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,75.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="m"
+          ParentId="Package\ConsultarNivelServicioInsertarNivelServicioDWH"
+          FontInfo="{assembly:Null}"
+          Size="39.2,40"
+          Id="aa455077-a5c3-4a77-ad89-b7af210c05b0"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ConsultarNivelServicioInsertarNivelServicioDWH\NivelServicioDWH">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ConsultarNivelServicioInsertarNivelServicioDWH\ViajesSource">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

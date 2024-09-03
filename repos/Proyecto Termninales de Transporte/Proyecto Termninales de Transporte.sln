@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34931.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "MovilidadDWH", "MovilidadDWH\MovilidadDWH.dtproj", "{2437B4F4-D140-47EE-9950-CCD0641CC26A}"
+EndProject
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "MovilidadDim", "MovilidadDim\MovilidadDim.dtproj", "{F3E86B32-01B9-4F9C-838B-8B03A5D75A27}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2437B4F4-D140-47EE-9950-CCD0641CC26A}.Development|Default.ActiveCfg = Development
+		{2437B4F4-D140-47EE-9950-CCD0641CC26A}.Development|Default.Build.0 = Development
+		{F3E86B32-01B9-4F9C-838B-8B03A5D75A27}.Development|Default.ActiveCfg = Development
+		{F3E86B32-01B9-4F9C-838B-8B03A5D75A27}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {64B0A3CB-1E9A-44F5-96D3-1B82E303A990}
+	EndGlobalSection
+EndGlobal

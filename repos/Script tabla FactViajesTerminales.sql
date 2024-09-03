@@ -1,0 +1,23 @@
+CREATE TABLE [dbo].[FactViajesTerminales] (
+    [IDViajes]              INT  NOT NULL,
+    [IdClaseVehiculo]       INT  NOT NULL,
+    [IdTerminal]            INT  NOT NULL,
+    [IdNivelServicio]       INT  NOT NULL,
+    [IdMunicipioOrigen]     INT  NOT NULL,
+    [IdDepartamentoOrigen]  INT  NOT NULL,
+    [IdMunicipioDestino]    INT  NOT NULL,
+    [IdDepartamentoDestino] INT  NOT NULL,
+    [FechaDespacho]         DATE NOT NULL,
+    [HoraDespacho]          INT  NOT NULL,
+    [CantidadDespachos]     INT  NOT NULL,
+    [CantidadPasajeros]     INT  NOT NULL,
+    [IdTipoDespacho]        INT  NOT NULL,
+    CONSTRAINT [PK_FactViajesTerminales] PRIMARY KEY CLUSTERED ([IDViajes] ASC),
+    CONSTRAINT [FK_DimClaseVehiculo] FOREIGN KEY ([IdClaseVehiculo]) REFERENCES [dbo].[DimClaseVehiculo] ([IDClaseVehiculo]),
+    CONSTRAINT [FK_DimMunicipiosDestino] FOREIGN KEY ([IdMunicipioDestino]) REFERENCES [dbo].[DimMunicipios] ([IDMunicipio]),
+    CONSTRAINT [FK_DimMunicipiosOrigen] FOREIGN KEY ([IdMunicipioDestino]) REFERENCES [dbo].[DimMunicipios] ([IDMunicipio]),
+    CONSTRAINT [FK_DimNivelServicio] FOREIGN KEY ([IdNivelServicio]) REFERENCES [dbo].[DimNivelServicio] ([IDNivelServicio]),
+    CONSTRAINT [FK_DimTerminales] FOREIGN KEY ([IdTerminal]) REFERENCES [dbo].[DimTerminales] ([IDTerminal]),
+    CONSTRAINT [FK_DimTipoDespacho] FOREIGN KEY ([IdTipoDespacho]) REFERENCES [dbo].[DimTipoDespacho] ([IDTipoDespacho]),
+    CONSTRAINT [FK_FactViajesTerminales_DimTiempo] FOREIGN KEY ([FechaDespacho], [HoraDespacho]) REFERENCES [dbo].[DimTiempo] ([Fecha], [Hora])
+);
